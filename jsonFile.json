@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "carName": "Lamborghini",
+    "carModel": "Aventador",
+    "carYear": 2015,
+    "carPrice": 400000,
+    "carImage": "https://www.lamborghini.com/sites/it-en/files/DAM/lamborghini/facelift_2019/model_detail/aventador/ultimae_roadster/menu_aven_ulti_rds.png"
+  },
+  {
+    "id": 2,
+    "carName": "Lamborghini",
+    "carModel": "Huracan",
+    "carYear": 2017,
+    "carPrice": 200000,
+    "carImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRg-LQEmLlha-CDixnag8REpGGu3y_nfpKUZA&usqp=CAU"
+  },
+  {
+    "id": 3,
+    "carName": "Lamborghini",
+    "carModel": "Urus",
+    "carYear": 2018,
+    "carPrice": 300000,
+    "carImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRg-LQEmLlha-CDixnag8REpGGu3y_nfpKUZA&usqp=CAU"
+  }
+]

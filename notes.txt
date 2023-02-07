@@ -1,0 +1,16 @@
+//things which are done
+
+
+1. Login User
+2. Login Owner
+3. Signup user
+4. Signup Owner
+6. Main Page Owner
+
+
+
+//things which are needed to be completed
+1. User Dashboard
+2. Bookings and its confirmations
+3. User can see his bookings
+

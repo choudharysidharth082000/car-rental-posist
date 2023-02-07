@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Main Page</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+      crossorigin="anonymous"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="/src/styles/global.css" />
+    <script src="/data/database.js"></script>
+    <script defer src="/src/javascript/mainPage.js"></script>
+  </head>
+  <body>
+    <div
+      class="containorMain w-full height-screen d-flex flex-column position-relative"
+    >
+      <!-- Start of the Navbar -->
+      <div class="conainorNav w-full bg-black">
+        <div
+          class="containorWrapper py-2 bg-black d-flex justify-content-between align-content-center"
+        >
+          <div
+            class="containorLogo p-2 d-flex justify-content-center align-items-center"
+          >
+            <h5 class="text-white px-3">Logo</h5>
+            <!-- Logo -->
+            <h6 class="text-white px-3">Company</h6>
+            <h6 class="text-white px-3">Safety</h6>
+            <h6 class="text-white px-3">Help</h6>
+          </div>
+          <div
+            class="containorButtons p-2 d-flex justify-content-center align-items-center"
+          >
+            <h6 class="text-white px-3">Products</h6>
+            <h6 id="loginButtonNav" class="text-white px-3">Login</h6>
+            <button
+              id="signupButtonNav"
+              class="mx-3 px-3 py-2 rounded-md bg-white text-black outline-none font-weight-semibold"
+            >
+              Signup
+            </button>
+          </div>
+        </div>
+      </div>
+      <!-- End of the Navbar  -->
+
+      <!-- Containor for the sidebar -->
+      <div class="sidebar" id="sidebar">
+        <div class="containorSidebarComponent w-full p-4 mt-4">
+          <div
+            class="containorFirstHeader w-full p-2 d-flex justify-content-between"
+          >
+            <h2 class="text-black font-weight-100">Your Added Car</h2>
+            <!-- Close Button  -->
+            <h2 style="cursor: pointer" id="closeSidebar">
+              <i class="fa-solid fa-close text-black"></i>
+            </h2>
+          </div>
+          <div
+            class="containorCarImage w-full p-2 d-flex justify-content-center align-items-center mt-5 bg-white border shadow-sm"
+          >
+            <img id="sidebarImage" src="" alt="" style="object-fit: contain" />
+          </div>
+          <!-- Information Regarding the Car -->
+          <div
+            class="containorCarInfo w-full p-2 d-flex justify-content-center align-items-center mt-5 bg-white border shadow-sm"
+          >
+            <div class="containorCarInfoWrapper w-full p-2">
+              <h4 class="text-black font-weight-100" id="SidebarModel">
+                <i class="fa-solid fa-car text-black"></i> Hurricane Model Car
+              </h4>
+              <p class="text-muted font-weight-100" id="sidebarCompany">
+                Lamborgini
+              </p>
+              <p class="text-black font-weight-100" id="sidebarPrice">
+                Price : 1240000/-
+              </p>
+              <p class="text-black font-weight-100" id="sidebarCapacity">
+                Seating Capacity : 5
+              </p>
+              <!-- Button to Delete item -->
+              <button
+                class="mainColorbg text-white outline-none py-2 w-full mt-2"
+                style="border-radius: 0px"
+              >
+                Delete
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- End of the containor  -->
+
+      <div class="containorAddCarsForm w-full modalColor p-4">
+        <div
+          class="containorWrapper py-2 d-flex justify-content-between align-content-center flex-wrap"
+        >
+          <div
+            class="containorHeader w-40 p-2 d-flex justify-content-start align-center-center flex-column"
+          >
+            <h4 class="font-size-lg">Add cars in eady steps</h4>
+            <p class="text-muted">
+              Renting a car gives you freedom and we'll help you find the best
+              car for you at a great price
+            </p>
+            <div class="containorStars d-flex mt-1">
+              <i class="fa-sharp fa-solid fa-star"></i>
+              <i class="fa-sharp fa-solid fa-star"></i>
+              <i class="fa-sharp fa-solid fa-star"></i>
+              <i class="fa-sharp fa-solid fa-star"></i>
+              <i class="fa-sharp fa-solid fa-star"></i>
+            </div>
+            <p class="mt-2 text-muted text-sm">Trusted by million of users</p>
+
+            <!-- <button class="border border-black py-2 text-black bg-white">Add New Cars</button> -->
+          </div>
+
+          <!-- Containor Car selection -->
+          <div class="containorAddCarsSection w-60 p-2">
+            <div class="containrInnerCars rounded-md-an border p-3 bg-white">
+              <div class="containorFirstForm w-full d-flex p2">
+                <!-- //Form Fields for enquiry                                     -->
+                <div class="containorFlex w-50 d-flex flex-column mx-2">
+                  <label for="enquiry" class="text-md text-muted"
+                    >Enquiry <i class="fa-solid fa-envelope text-muted"></i
+                  ></label>
+                  <input
+                    type="text"
+                    name="Enquiry"
+                    placeholder="enquiry"
+                    name="enquiry"
+                    class="px-3 py-2 mt-1 rounded-md-an"
+                  />
+                </div>
+                <div class="containorFlex w-50 d-flex flex-column mx-2">
+                  <label for="message" class="text-md text-muted"
+                    >Message <i class="fa-solid fa-envelope text-muted"></i>
+                  </label>
+                  <input
+                    type="text"
+                    name="message"
+                    placeholder="Message"
+                    name="message"
+                    class="px-3 py-2 mt-1 rounded-md-an"
+                  />
+                </div>
+              </div>
+              <!-- Button  -->
+              <div class="containorButton w-full d-flex justify-content-end">
+                <button
+                  id="signupButtonNav"
+                  class="mx-2 px-3 py-3 w-full mt-4 bg-black text-white rounded-md-an outline-none font-weight-semibold"
+                >
+                  Submit
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="contanorEndButton w-full p-2">
+        <div class="containorWrapper p-3 d-flex justify-content-end">
+          <button
+            class="py-2 px-4 outline-none bg-black text-white mx-3"
+            data-toggle="modal"
+            data-target="#exampleModal"
+            data-whatever="@mdo"
+            id="addNewCar"
+          >
+            Add New Car
+          </button>
+          <button
+            class="py-2 px-4 outline-none modalColor border border-2"
+            id="viewOrders"
+          >
+            View Orders
+          </button>
+        </div>
+      </div>
+
+      <!-- //add car Containor -->
+      <div
+        class="containorAddCarForm w-full p-2"
+        style="height: 0px; display: none"
+        id="containorAddCar"
+      >
+        <div class="containorWrapper p-3 d-flex flex-column">
+          <!-- <h4 class="my-3 font-size-md mx-2">Add Your Car</h4> -->
+          <div class="carbanner w-full">
+            <img
+              class="carbannerimage"
+              src="https://nearmetrade.com/local/public/vendor/uberModalities_banner_home.png"
+              alt=""
+            />
+          </div>
+          <form action="" id="addCarForm" class="d-flex flex-column">
+            <div class="containorInnerForm d-flex w-full">
+              <!-- INput Field 1/2 -->
+              <div class="containorInputField w-50 d-flex flex-column mx-2">
+                <label for="carName" class="text-md text-muted mx-2"
+                  >Car Name <i class="fa-solid fa-car text-muted"></i
+                ></label>
+                <input
+                  type="text"
+                  name="carName"
+                  placeholder="Car Name"
+                  id="carname"
+                  class="px-3 py-2 mt-1 rounded-md-an"
+                />
+              </div>
+              <div class="containorInputField w-50 d-flex flex-column mx-2">
+                <label for="carName" class="text-md text-muted mx-2"
+                  >Car Model <i class="fa-solid fa-car text-muted"></i
+                ></label>
+                <input
+                  type="text"
+                  name="carmodel"
+                  id="carmodel"
+                  placeholder="Car Model"
+                  name="carName"
+                  class="px-3 py-2 mt-1 rounded-md-an"
+                />
+              </div>
+            </div>
+            <div class="containorInnerForm d-flex w-full my-4">
+              <!-- INput Field 1/2 -->
+              <div class="containorInputField w-50 d-flex flex-column mx-2">
+                <label for="carName" class="text-md text-muted mx-2"
+                  >Car Manufacturing Year
+                  <i class="fa-solid fa-calendar text-muted"></i
+                ></label>
+                <input
+                  type="text"
+                  name="carName"
+                  id="caryear"
+                  placeholder="Car Name"
+                  name="carName"
+                  class="px-3 py-2 mt-1 rounded-md-an"
+                />
+              </div>
+              <div class="containorInputField w-50 d-flex flex-column mx-2">
+                <label for="carName" class="text-md text-muted mx-2"
+                  >Car Image <i class="fa-solid fa-image text-muted"></i
+                ></label>
+                <input
+                  type="text"
+                  name="caryear"
+                  id="carimage"
+                  placeholder="Car Year"
+                  class="px-3 py-2 mt-1 rounded-md-an"
+                />
+              </div>
+            </div>
+            <div class="containorInnerForm d-flex w-full mb-4">
+              <!-- INput Field 1/2 -->
+              <div class="containorInputField w-50 d-flex flex-column mx-2">
+                <label for="carName" class="text-md text-muted mx-2"
+                  >Car Seating Capacity
+                  <i class="fa-solid fa-car text-muted"></i
+                ></label>
+                <input
+                  type="text"
+                  id="carseating"
+                  name="carName"
+                  placeholder="Car Name"
+                  name="carName"
+                  class="px-3 py-2 mt-1 rounded-md-an"
+                />
+              </div>
+              <div class="containorInputField w-50 d-flex flex-column mx-2">
+                <label for="carName" class="text-md text-muted mx-2"
+                  >Car Price <i class="fa-solid fa-dollar text-muted"></i
+                ></label>
+                <input
+                  type="text"
+                  name="caryear"
+                  id="carprice"
+                  placeholder="Car Year"
+                  class="px-3 py-2 mt-1 rounded-md-an"
+                />
+              </div>
+            </div>
+
+            <div class="containorInnerForm d-flex w-full mb-4">
+              <!-- INput Field 1/2 -->
+              <div class="containorInputField w-50 d-flex flex-column mx-2">
+                <label for="carName" class="text-md text-muted mx-2"
+                  >Car Price Hourly <i class="fa-solid fa-fare text-muted"></i
+                ></label>
+                <input
+                  type="text"
+                  name="carName"
+                  id="carpricehourly"
+                  placeholder="Car Name"
+                  name="carName"
+                  class="px-3 py-2 mt-1 rounded-md-an"
+                />
+              </div>
+              <div class="containorInputField w-50 d-flex flex-column mx-2">
+                <label for="carName" class="text-md text-muted mx-2"
+                  >Car Extra Charges
+                  <i class="fa-solid fa-dollar text-muted"></i
+                ></label>
+                <input
+                  type="text"
+                  id="carextracharges"
+                  name="caryear"
+                  placeholder="Car Year"
+                  class="px-3 py-2 mt-1 rounded-md-an"
+                />
+              </div>
+            </div>
+
+            <!-- Button -->
+            <div class="containorButton w-full d-flex justify-content-end">
+              <button
+                type="submit"
+                class="py-2 px-4 outline-none bg-black text-white outline-none"
+                id="addCar"
+              >
+                Add Car
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div
+        class="containorTableOrders w-full p-5"
+        style="display: none"
+        id="containorTableOrders"
+      >
+        <div
+          class="containorWrapper p-1 d-flex justify-content-center align-items-center"
+        >
+          <table class="table">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Email</th>
+                <th scope="col">Location</th>
+                <th scope="col">Name</th>
+                <th scope="col">Phone</th>
+                <th scope="col">Price</th>
+                <th scope="col">Start Date</th>
+                <th scope="col">End Date</th>
+                <th scope="col">Start Time</th>
+                <th scope="col">End Time</th>
+                <th scope="col">Actions</th> 
+
+              </tr>
+            </thead>
+            <tbody id="rowsTable">
+              
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div
+        class="containorCarsPresent w-full p-3 bg-light d-flex flex-wrap py-lg-5 bg-light justify-content-evenly"
+      >
+        <div
+          class="containorWrapper2 py-2 d-flex justify-content-evenly align-content-center flex-wrap"
+          id="containorAddCars"
+        ></div>
+      </div>
+    </div>
+  </body>
+</html>
