@@ -38,8 +38,6 @@ if (localStorage.getItem("userID") == null) {
   loginButtonNav.innerHTML = "Profile";
 }
 
-
-
 //checking if the signup button is logout or not
 signupButtonNav.addEventListener("click", () => {
   if (signupButtonNav.innerHTML === "Logout") {
@@ -48,7 +46,6 @@ signupButtonNav.addEventListener("click", () => {
     window.location.href = "/";
   }
 });
-
 
 //close Modal
 closeModal.addEventListener("click", () => {
@@ -134,6 +131,7 @@ const transaction = db.transaction("cars", "readonly");
 const objectStore = transaction.objectStore("cars");
 const request1 = objectStore.openCursor();
 var i = 0;
+console.log("Fetching the data");
 request1.onsuccess = (e) => {
   const cursor = e.target.result;
   if (cursor) {
@@ -307,10 +305,18 @@ requestBooking.onsuccess = function (event) {
           <h6 class="font-weight-bold">${car.name}</h6>
           <h6 class="font-weight-bold">${booking.locationUser}</h6>
           <h6 class="text-muted">${booking.date}</h6>
-          <h6 class="text-muted"><i class="fas fa-clock"></i> ${booking.time}</h6>
+          <h6 class="text-muted"><i class="fas fa-clock"></i> ${
+            booking.time
+          }</h6>
           <h6>By, ${user.email}</h6>
           <h4 class="text-danger font-weight-bold">Rs ${booking.price}/-</h4>
-          <h6 class="px-3 py-2 bg-info text-white">${booking.status}</h6>
+          <h6 class="px-4 py-2 ${
+            booking.status === "confirmed"
+              ? "bg-success"
+              : booking.status === "rejected"
+              ? "bg-danger"
+              : "bg-info"
+          } text-white">${booking.status}</h6>
         </div>
           `;
         });

@@ -198,24 +198,25 @@ containorAddCar.addEventListener("submit", function (e) {
 
 //function to change the booking state to confirmed or rejected
 function changeBookingState(id, value) {
-  console.log(state, id, value);
+  console.log(id, value);
   const transaction = db.transaction("purchasedCars", "readwrite");
   const objectStore = transaction.objectStore("purchasedCars");
-  //updating the status to value
-  const request = objectStore.get(id);
-  request.onsuccess = function (e) {
-    const data = e.target.result;
-    console.log(data);
-    data[state] = value;
-    const requestUpdate = objectStore.put(data);
-    requestUpdate.onsuccess = function (e) {
-      console.log("Booking Updated");
-      window.location.href = "mainPage.html";
-    };
-  }
-
-  request.onerror = function (e) {
-    console.log("Error", e);
+  var request1 = objectStore.openCursor();
+  request1.onsuccess = function (e) {
+    const cursor = e.target.result;
+    if (cursor) {
+      if (cursor.value.id === id) {
+        console.log(cursor.value.id);
+        var updateData = cursor.value;
+        updateData.status = value;
+        console.log("The Updated Value");
+        var request = cursor.update(updateData);
+        request.onsuccess = function () {
+          console.log("Updated");
+        };
+      }
+      cursor.continue();
+    }
   }
 
   
@@ -224,12 +225,14 @@ function changeBookingState(id, value) {
 
 //function when clicked on accept
 function acceptBooking(id) {
-  changeBookingState("status", id, "confirmed");
+  changeBookingState(id, "confirmed");
+  alert("Wohoo Booking Confirmed")
   console.log("Booking Accepted");
 }
 //function to reject
 function rejectBooking(id) {
-  changeBookingState("reject", id, "rejected");
+  changeBookingState(id, "rejected");
+  alert("Booking Rejected");
 }
 //fetching the data and adding the table to the main Memory
 const tableOrders = document.getElementById("rowsTable");
@@ -256,7 +259,7 @@ requestBookings.onsuccess = function (e) {
         <td>${cursor.value.toDate}</td>
         <td>${cursor.value.time}</td>
         <td>${cursor.value.toTime}</td>
-        <td class="d-flex"><button onclick="acceptBooking('${cursor.value.id}')" class="btn btn-success mx-1">Accept</button> <button onclick="rejectBooking()" class="btn btn-danger">Reject</button></td>
+        <td class="d-flex"><button onclick="acceptBooking('${cursor.value.id}')" class="btn btn-success mx-1">Accept</button> <button onclick="rejectBooking('${cursor.value.id}')" class="btn btn-danger">Reject</button></td>
         </tr>
       `;
     }

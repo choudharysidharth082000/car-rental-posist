@@ -7,7 +7,7 @@ const passwordOwner = document.getElementById("password");
 const errorOwner = document.getElementById("errorOwner");
 
 buttonNewAccountOwner.addEventListener("click", () => {
-  window.location.href = "newAccountOwner.html";
+  window.location.href = "SignupUser.html";
 });
 
 formSubmitLoginOwner.addEventListener("submit", function (e) {
