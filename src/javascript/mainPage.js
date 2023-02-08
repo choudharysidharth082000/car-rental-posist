@@ -101,7 +101,7 @@ request1.onsuccess = function (e) {
       console.log("This is the car of the user");
       //creatung the div element
       containorWrapper.innerHTML += `
-      <div class="cardContainor bg-white d-flex flex-column bg-white p-4 m-3 cursor-pointer" id="${cursor.key}">
+      <div class="cardContainor bg-white d-flex flex-column bg-white p-4 m-2 cursor-pointer" id="${cursor.key}">
         <div class="containorInner w-full d-flex justify-content-between px-1">
           <div class="containorTitle">
             <h4>${cursor.value.name}</h4>
@@ -266,3 +266,35 @@ requestBookings.onsuccess = function (e) {
     cursor.continue();
   }
 };
+
+
+
+
+//graph code
+// (async function() {
+//   const data = [
+//     { year: 2010, count: 10 },
+//     { year: 2011, count: 20 },
+//     { year: 2012, count: 15 },
+//     { year: 2013, count: 25 },
+//     { year: 2014, count: 22 },
+//     { year: 2015, count: 30 },
+//     { year: 2016, count: 28 },
+//   ];
+
+//   new Chart(
+//     document.getElementById('acquisitions'),
+//     {
+//       type: 'bar',
+//       data: {
+//         labels: data.map(row => row.year),
+//         datasets: [
+//           {
+//             label: 'Acquisitions by year',
+//             data: data.map(row => row.count)
+//           }
+//         ]
+//       }
+//     }
+//   );
+// })();

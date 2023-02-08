@@ -21,7 +21,7 @@ h2 {
 .font-size-md {
   font-size: 1.5rem;
 }
-.formContainor{
+.formContainor {
   width: 600px;
   background-color: red;
   height: auto;
@@ -83,7 +83,7 @@ h2 {
   width: 1200px;
   margin: auto;
 }
-.containorWrapperinside{
+.containorWrapperinside {
   width: 1500px;
   margin: auto;
 }
@@ -107,7 +107,6 @@ h2 {
   border-radius: 50%;
 }
 .rounded-sm-an {
-
   border-radius: 0.5rem;
 }
 .card1 {
@@ -249,7 +248,7 @@ idn .inputColor {
 .text-sm {
   font-size: 0.775rem;
 }
-.containorWrapper{
+.containorWrapper {
   width: 1500px;
   margin: auto;
 }
@@ -320,25 +319,30 @@ input::placeholder {
 .normalCard {
   background-color: #efefef;
 }
-.carTopRental{
-    width: 200px;
-    object-fit: contain;
+.carTopRental {
+  width: 200px;
+  object-fit: contain;
 }
-.flex-card{
-    flex-direction: row;
+.flex-card {
+  flex-direction: row;
 }
 /* Linear Gradient For Modal Black screen */
 .modal-backdrop {
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.8), transparent), no-repeat;
   background-size: cover;
   position: fixed;
-  top:0
+  top: 0;
 }
 
 /* Media Queries for the mobile screen */
 @media (max-width: 768px) {
-    .flex-card{
-        flex-direction: column ;
-    }
-    
+  .flex-card {
+    flex-direction: column;
+  }
+}
+
+.firstCard {
+  width: 200px;
+  border: 1px solid gray;
+  border-radius: 5px;
 }

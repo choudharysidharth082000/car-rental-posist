@@ -20,6 +20,12 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <!-- <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.2.0/chart.min.js"
+      integrity="sha512-qKyIokLnyh6oSnWsc5h21uwMAQtljqMZZT17CIMXuCQNIfFSFF4tJdMOaJHL9fQdJUANid6OB6DRR0zdHrbWAw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script> -->
     <link rel="stylesheet" href="/src/styles/global.css" />
     <script src="/data/database.js"></script>
     <script defer src="/src/javascript/mainPage.js"></script>
@@ -338,11 +344,57 @@
           </form>
         </div>
       </div>
+
       <div
         class="containorTableOrders w-full p-5"
         style="display: none"
         id="containorTableOrders"
       >
+        <div
+          class="containorAnalytics w-full d-flex justify-content-center my-3"
+        >
+          <div
+            class="containorWrapper p-2 d-flex justify-content-center align-items-center flex-wrap"
+          >
+            <p
+              class="firstCard py-3 d-flex justify-content-center align-items-center mx-3 my-2"
+            >
+              Total Cars :
+              <span class="font-weight-bold text-dark">12</span>
+            </p>
+            <p
+              class="firstCard py-3 d-flex justify-content-center align-items-center mx-3 my-2"
+            >
+              Total Cars :
+              <span class="font-weight-bold text-dark">12</span>
+            </p>
+            <p
+              class="firstCard py-3 d-flex justify-content-center align-items-center mx-3 my-2"
+            >
+              Total Cars :
+              <span class="font-weight-bold text-dark">12</span>
+            </p>
+            <p
+              class="firstCard py-3 d-flex justify-content-center align-items-center mx-3 my-2"
+            >
+              Total Cars :
+              <span class="font-weight-bold text-dark">12</span>
+            </p>
+            <p
+              class="firstCard py-3 d-flex justify-content-center align-items-center mx-3 my-2"
+            >
+              Total Cars :
+              <span class="font-weight-bold text-dark">12</span>
+            </p>
+            <p
+              class="firstCard py-3 d-flex justify-content-center align-items-center mx-3 my-2"
+            >
+              Total Cars :
+              <span class="font-weight-bold text-dark">12</span>
+            </p>
+          </div>
+        </div>
+        
         <div
           class="containorWrapper p-1 d-flex justify-content-center align-items-center"
         >
@@ -359,13 +411,10 @@
                 <th scope="col">End Date</th>
                 <th scope="col">Start Time</th>
                 <th scope="col">End Time</th>
-                <th scope="col">Actions</th> 
-
+                <th scope="col">Actions</th>
               </tr>
             </thead>
-            <tbody id="rowsTable">
-              
-            </tbody>
+            <tbody id="rowsTable"></tbody>
           </table>
         </div>
       </div>
@@ -373,7 +422,7 @@
         class="containorCarsPresent w-full p-3 bg-light d-flex flex-wrap py-lg-5 bg-light justify-content-evenly"
       >
         <div
-          class="containorWrapper2 py-2 d-flex justify-content-start align-content-start flex-wrap"
+          class="containorWrapper py-2 d-flex justify-content-evenly align-content-center flex-wrap"
           id="containorAddCars"
         ></div>
       </div>
