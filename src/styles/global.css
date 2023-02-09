@@ -86,6 +86,7 @@ h2 {
 .containorWrapperinside {
   width: 1500px;
   margin: auto;
+  overflow-x: scroll;
 }
 
 /* .width-all-file{
@@ -267,7 +268,8 @@ idn .inputColor {
 }
 
 .cardContainor {
-  width: 350px;
+  min-width: 350px;
+  max-width: 350px;
   height: auto;
 }
 .rounded-md {

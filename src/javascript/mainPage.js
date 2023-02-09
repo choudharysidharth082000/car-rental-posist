@@ -26,6 +26,12 @@ const rowsTable = document.getElementById("rowsTable");
 
 var keys = [];
 
+//checking if the user is admin
+const user = JSON.parse(localStorage.getItem("user"));
+if (user.userType != "owner" || localStorage.getItem("userID") == null) {
+  window.location.href = "index.html";
+}
+
 //checling the localstorage (Protected route is implemented here)
 if (localStorage.getItem("userID") == null) {
   window.location.href = "index.html";
@@ -217,16 +223,13 @@ function changeBookingState(id, value) {
       }
       cursor.continue();
     }
-  }
-
-  
+  };
 }
-
 
 //function when clicked on accept
 function acceptBooking(id) {
   changeBookingState(id, "confirmed");
-  alert("Wohoo Booking Confirmed")
+  alert("Wohoo Booking Confirmed");
   console.log("Booking Accepted");
 }
 //function to reject
@@ -259,16 +262,17 @@ requestBookings.onsuccess = function (e) {
         <td>${cursor.value.toDate}</td>
         <td>${cursor.value.time}</td>
         <td>${cursor.value.toTime}</td>
-        <td class="d-flex"><button onclick="acceptBooking('${cursor.value.id}')" class="btn btn-success mx-1">Accept</button> <button onclick="rejectBooking('${cursor.value.id}')" class="btn btn-danger">Reject</button></td>
+        <td class="d-flex"><button onclick="acceptBooking('${
+          cursor.value.id
+        }')" class="btn btn-success mx-1">Accept</button> <button onclick="rejectBooking('${
+        cursor.value.id
+      }')" class="btn btn-danger">Reject</button></td>
         </tr>
       `;
     }
     cursor.continue();
   }
 };
-
-
-
 
 //graph code
 // (async function() {

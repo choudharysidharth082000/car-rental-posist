@@ -139,7 +139,8 @@ request1.onsuccess = (e) => {
       containorWrapper.innerHTML = `<h1 class="text-center">No cars added yet</h1>`;
       return;
     }
-    if (i <= 3) {
+    if (i <= 10
+      ) {
       containorWrapper.innerHTML += `
       <div
       class="cardContainor bg-white d-flex flex-column bg-white p-4 m-3 cursor-pointer"
